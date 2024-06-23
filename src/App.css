@@ -66,3 +66,7 @@
   color: pink;
 }
 
+button:disabled { 
+  background-color: grey;
+  border-color: grey;
+}
