@@ -12,13 +12,18 @@ export default function PigGame() {
   const rollTurnSection = () => {
     const randomRoll = Math.floor(Math.random() * (7 - 1) + 1);
     setPresentRoll(randomRoll);
-    if (currentPlayer && randomRoll === 1) {
-      setTurn(randomRoll * 0);
-      setCurrentPlayer(false);
-    } else if (!currentPlayer && randomRoll === 1) {
-      setTurn(randomRoll * 0);
-      setCurrentPlayer(true);
+    if (currentPlayer) {
+      isCurrentPlayer(true);
+    } else if (!currentPlayer) {
+      isCurrentPlayer(false);
     } else setTurn((turn) => turn + randomRoll);
+  };
+
+  const isCurrentPlayer = (player) => {
+    if (randomRoll === 1) {
+      setTurn(randomRoll * 0);
+      setCurrentPlayer(!player);
+    }
   };
 
   const stickSection = () => {
@@ -81,7 +86,6 @@ export default function PigGame() {
       }
     }
   };
-
 
   return (
     <div className="group-content">
