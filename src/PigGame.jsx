@@ -34,7 +34,7 @@ export default function PigGame() {
   };
 
   const updateGameSection = () => {
-    setCurrentPlayer("Player 1");
+    setCurrentPlayer(true);
     setScorePlayer1(0);
     setScorePlayer2(0);
     setPresentRoll("-");
